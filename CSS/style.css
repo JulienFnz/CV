@@ -193,6 +193,9 @@ body {
 
 .photo {
   clip-path: ellipse(50% 50%);
+ 
+
+      
 }
 
 
@@ -229,7 +232,7 @@ body {
 .twitter img {
   width: 6rem;
   transition: 0.2s;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-name: slidein;
   
 }
@@ -244,7 +247,7 @@ body {
 
 .linkedin img {
   width: 6rem;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-name: slidein;
 }
 
@@ -255,7 +258,7 @@ body {
 
 .youtube img {
   width: 6rem;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-name: slidein;
 }
 
@@ -266,7 +269,7 @@ body {
 
 .github img {
   width: 6rem;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-name: slidein;
    
 }
@@ -282,18 +285,18 @@ body {
   animation-name: slidein;*/
  
 
-@keyframes slidein {
-  from  {
-   
-    width: 0rem;
-    transform: rotate(0deg);
+  @keyframes slidein {
+    from  {
+     
+     
+      transform: rotate(0deg);
+    }
+    
+    to {
+      transform: rotate(-360deg);
+     
+    }
   }
-  
-  to {
-    transform: rotate(-360deg);
-   
-  }
-}
 
 
 /*________________________________________________*/

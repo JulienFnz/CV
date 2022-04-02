@@ -1,15 +1,15 @@
 (function() {
 
-    /*'use strict';*/
+    'use strict';
   
-    let element, string, length;
+    var element, string, length;
   
     element = document.querySelector('.terminal');
     string  = element.innerText;
     length  = string.length;
   
     function timer(delay, repetitions) {
-      let n, i;
+      var n, i;
       
       n = 0;
       i = window.setInterval(function () {
