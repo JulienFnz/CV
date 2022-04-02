@@ -1,454 +1,560 @@
 
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css?family=PT+Mono");
+
 body {
-    font-size: 62.5%;
-    /* base de "10px" au lieu de "16px" */
-    font-family: monospace;
-    background-color: #c800ff;
-    color: rgb(255, 255, 255);
-    margin-left: auto;
-    margin-right: auto;
-    margin: 0;   
-    position: scroll;
+  /*background-color: rgb(61, 7, 66);*/
+
+  /*background: linear-gradient(0.25turn, #270031, #031322,#270031);*/
+  background: linear-gradient(-45deg, #290435, #350452, #30072b, #110844);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  font-size: 62.5%;
+  /* base de "10px" au lieu de "16px" */
+
+  font-family: Poppins; 
+  color: rgb(255, 255, 255);
+
+  /* a supprimer sur version mobile */
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1%;
+  
+
 }
 
- 
- 
+/*ANIMATION FOND BODY - Dégradé animé*/
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
 
-/*Background 1*/
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/*Pour effet Bruit - div vide class bg*/
+
 .bg {
-    animation: slide 15s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, rgb(218, 75, 236) 50%, rgb(0, 125, 129) 50%);
-    bottom: 0;
-    left: -50%;
-    opacity: .5;
-    position: fixed;
-    right: -50%;
-    top: 0;
-    /*z-index:-1;*/
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .9;
+  visibility: visible;
 }
 
-/*Background 2*/
-.bg2 {
-    animation-direction: alternate-reverse;
-    animation-duration: 15s;
+/*ANIMATION FOND Effet Bruit */
+@keyframes bg-animation {
+  0% {
+    transform: translate(0, 0)
+  }
+
+  10% {
+    transform: translate(-5%, -5%)
+  }
+
+  20% {
+    transform: translate(-10%, 5%)
+  }
+
+  30% {
+    transform: translate(5%, -10%)
+  }
+
+  40% {
+    transform: translate(-5%, 15%)
+  }
+
+  50% {
+    transform: translate(-10%, 5%)
+  }
+
+  60% {
+    transform: translate(15%, 0)
+  }
+
+  70% {
+    transform: translate(0, 10%)
+  }
+
+  80% {
+    transform: translate(-15%, 0)
+  }
+
+  90% {
+    transform: translate(10%, 5%)
+  }
+
+  100% {
+    transform: translate(5%, 0)
+  }
 }
 
-/*Background 3*/
-.bg3 {
-    animation-duration: 10s;
+
+/*CONTAINER avec contour effet lumineux - contient la grid*/
+
+.container {
+  background: repeating-linear-gradient(to top,
+      rgba(255, 255, 255, 0.03) 0px 2px,
+      transparent 2px 4px),
+    linear-gradient(to bottom, #200933 50%, #4b0552);
+
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 0.4fr 1.1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "picture banner"
+    "compet info";
+
+  margin: auto;
+  padding: 0.5rem;
+  filter: drop-shadow(0 0 75px rgba(0, 247, 255, 0.25));
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border: 1px solid rgb(0, 153, 255);
+
+  /*--glow: drop-shadow(0 0 1px rgb(130, 238, 238));
+  filter: var(--glow) brightness(1.5) drop-shadow(0 0 10px rgb(130, 180, 238)); */
+
+  padding: 2rem;
 }
 
-/*Background animation*/
+
 /*
-.content {
-    background-color: rgba(70, 23, 131, 0.8);
-    border-radius: 1em;
-    box-shadow: 0 0 5.25em rgba(0, 0, 0, .25);
-    box-sizing: border-box;
-    /*left: 50%; ----/*
-    /*padding:5vmin;*/
-     
-    /*position:fixed;*/
-    /*width: 40%; */
-    /* height: 78%; /* <--------------------------*/ 
-     /* text-align: center; */
-    /* top: 40%; ---- */
-    /*50%*/
-    /*transform: translate(100%, 2%);*/
+.container::after {
    
-    /* transform: translate(-50%, -50%); 
-}----*/
+  content:'';
+   height:90%;
+   width:100%;
+  display:flex;
+  background-image:linear-gradient(90deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px), linear-gradient(0deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px);
+  background-position:bottom;
+  background-repeat:repeat;
+  background-size:20px 20px;
+  left: -25px;
+  position:fixed;
+  bottom:0; 
+  transform: perspective(100px) rotateX(60deg);
+  z-index: 0;
+}
+ */
+
+/*_______________________*/
+/*   PHOTO       */
+/*_______________________*/
 
 
 
 
 
+.picture {
+  display: grid;
+  align-self: center;
+  /* left and right */
+  justify-self: center;
 
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  gap: -10px -10px -10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "e1 e2 youtube"
+    "e3 gridphoto linkedin"
+    "e4 twitter github";
 
- 
+  grid-area: picture;
 
-
-
-
-
-main {
-    margin-top: 7rem;
-    margin-left: 13.5rem;
-    margin-bottom:2rem;
-   
 }
 
+/*_______________________*/
+/*   logo social     */
+/*_______________________*/
 
-@keyframes slide {
-    00% {
-        transform: translateX(-25%);
-    }
-
-    100% {
-        transform: translateX(25%);
-    }
+.gridphoto {
+  filter: drop-shadow(-1px -1px 25px rgba(0, 183, 255));
+  
 }
 
-header {
-    position: fixed;
-    top: 0.5rem;
-    width: 100%;
-    height: 4rem;
-    text-align: start;
-    color: white;
-    background: linear-gradient(70deg, #bb46d8, rgb(55, 125, 216));
-    margin-left: auto;
-    margin-right: auto;
-}
-
-header img {}
-
-/* photo CV avec effet */
 .photo {
-    float: left;
-    margin: 0.5rem;
-    -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-    transition: 2s;
-    width: 8rem;
-    height: 8rem;
+  clip-path: ellipse(50% 50%);
 }
 
-.photo:hover {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+.twitter {
+   
+  align-self:center;
+  
+  z-index: 1;
 }
+
+.linkedin {
+  
+  justify-self:center;
+   
+  z-index: 1;
+}
+
+
+.youtube {
+  align-self:end;
+  margin-left:-2.5rem;
+  margin-bottom:-2.5rem;
+   
+  z-index: 1;
+}
+
+.github {
+  margin-left:-2.5rem;
+  margin-top:-2.5rem;
+    
+   z-index: 1;
+}
+
+.twitter img {
+  width: 6rem;
+  transition: 0.2s;
+  animation-duration: 5s;
+  animation-name: slidein;
+  
+}
+
+.twitter img:hover {
+  filter: drop-shadow(-1px -1px 25px rgb(0, 174, 255));
+  width: 5.5rem;
+  transition: 0.2s;
  
-.socialnetwork {
-    margin-right: 1%;
-    margin-top: -2rem;
-    position: relative;
-    left: 70%;
 }
 
-.social {
-    width: 7%;
-    margin: 0.5rem;
-    margin: -8%;
+
+.linkedin img {
+  width: 6rem;
+  animation-duration: 5s;
+  animation-name: slidein;
 }
 
-/*A REVOIR*/
-.social:hover {
-    /*width: 8%;*/
-    -webkit-transform: rotate(30deg) scale(1.25);
-    transform: rotate(30deg) scale(1.25);
+.linkedin img:hover {
+  filter: drop-shadow(-1px -1px 25px rgb(0, 238, 255));
+  width: 5.5rem;
+}
+
+.youtube img {
+  width: 6rem;
+  animation-duration: 5s;
+  animation-name: slidein;
+}
+
+.youtube img:hover {
+  filter: drop-shadow(-1px -1px 25px rgb(255, 0, 0));
+  width: 5.5rem;
+}
+
+.github img {
+  width: 6rem;
+  animation-duration: 5s;
+  animation-name: slidein;
+   
+}
+
+.github img:hover {
+  filter: drop-shadow(-1px -1px 25px rgb(255, 115, 0));
+  width: 5.5rem;
+}
+
+
+/*transform: rotate(10deg);*/
+  /*animation-duration: 5s;
+  animation-name: slidein;*/
+ 
+
+@keyframes slidein {
+  from  {
+   
+    width: 0rem;
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(-360deg);
+   
+  }
+}
+
+
+/*________________________________________________*/
+    /*               BANNIERE NOM + DEVWEB                 */
+       /*_______________________________________________________*/
+
+.banner {
+  grid-area: banner;
+  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+
+  /*justify-content: center;*/
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+
+  /*background: repeating-linear-gradient(to top,
+      rgba(255, 255, 255, 0.05) 0px 2px,
+      transparent 2px 4px), linear-gradient(to left, #3e0246 50%, #240327); */
+
 }
 
 h1 {
-    margin-top: 1rem;
-    /*text-shadow: 2px 2px 5px black;*/
-    color: #FFFFFF;
-    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
-    font-size: 1.6rem;
-    display: flex;
-    flex-direction: column;
+  color: #FFFFFF;
+  text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #2dd5ff 0px 0px 20px, #2dd5ff 0px 0px 30px, #2dc3ff 0px 0px 40px, #2dd5ff 0px 0px 50px, #2dbcff 0px 0px 75px;
+  font-size: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 6rem;
+   
 }
 
 h1 span {
-    margin-left: 6rem;
-    font-size: 1rem;
-    text-shadow: none;
-    font-weight: bold;
+  padding-top: 0.5rem;
+  font-size: 3.5rem;
+  text-shadow: none;
+  font-weight: bold;
+  
 }
 
+.terminal {
+  margin-top:2rem;
+  margin-left: 6rem;
+  font-size:1.2rem;
+  font-family:"PT Mono";
+  color:rgb(255, 199, 147);
+ 
+  width:50%;
 
-
-h2 {
-    padding: 0.5rem;
-    text-shadow: 2px 2px 10px black;
-    background: linear-gradient(70deg, #bb46d8, rgb(55, 125, 216));
-    border-radius: 10rem;
-    width: 10rem;
-    margin-top:1.5rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    font-size: 0.9rem;
-    box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.3);
 }
+ 
+ 
+
+
+/*_______________________*/
+/*    ZONE CONTENU        */
+/*_______________________*/
+
+/* --------*/
+/*  GRID4 */
+/*--------*/
+
+.info {
+  grid-area: info;
+  margin-left: 5rem;
+}
+
+ 
+
+.xp {
+
+  padding: 0.7rem;
+  
+ /* box-shadow:
+  0 0 0.5rem rgb(0, 204, 255),
+  inset 0 0 .5rem rgb(106, 250, 255),        
+  outset 0 0 .5rem rgb(106, 250, 255); */
+ 
+-webkit-box-shadow: 0px 0px 0px 2px rgb(74, 189, 255); 
+box-shadow: 0px 0px 0px 2px rgb(149, 216, 255),
+0px 0px 10px 10px rgba(15, 167, 255, 0.5),
+inset 0px 0px 10px 10px rgba(15, 167, 255, 0.5);
+ 
+  border-radius: 10rem;
+  width: 15rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  font-size: 1.8rem;
+  
+}
+
 
 h3 {
-    display: flex;
-    margin-top: 0.8rem;
-    font-size: 1.0rem;
-    font-weight: bold;
+  display: flex;
+  margin-top: 1.5rem;
+  margin-left: 1.8rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
 }
 
+/*_______________________*/
+/*    EXP PRO             */
+/*_______________________*/
 .exp {
-    display: flex;
-    flex-direction: row;
-    margin-top: 0.1rem;
-    margin-left: 0.2rem;
-    font-size: 0.7rem;
+  display: flex;
+  margin-top: 1.5rem;
+  margin-left: 1.8rem;
+  font-size: 1.1rem;
+  color: rgb(214, 214, 214);
+  
+
 }
 
 time {
-    font-size: 0.8rem;
-    color: #79ebff;
-    margin-right: 1rem;
+
+  font-size: 1.2rem;
+  color: #79ebff;
+  margin-right: 2rem;
+
 }
 
 h4 {
-    display: flex;
-    margin-top: 0.8rem;
-    margin-bottom:0.5rem;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color:#ed92f0;
+
+  margin-top: 1.5rem;
+  margin-left: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ed92f0;
 }
 
 .firstexp {
-    text-align: left;
+  margin-left: 1.8rem;
 }
 
 .firstexp li {
-    list-style: square;
-    margin-top: 0.5rem;
-    margin-left: 1.5rem;
-    padding: 0.1rem;
-    font-size: 0.6rem;
-    margin-bottom: 0.6rem;
+  list-style: square;
+  margin-top: 0.5rem;
+  margin-left: 1.8rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
 }
 
 .formations li {
-    list-style: square;
-    margin-top: 1rem;
-    margin-left: 1.5rem;
-    padding: 0.1rem;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.6rem;
+  /*list-style: square;*/
+  margin-top: 1rem;
+  margin-left: 1.8rem;
+  margin-bottom: 1rem;
+  padding: 0.1rem;
+  font-size: 1rem;
+  color: #b8b8b8;
+
 }
 
 .formations li span {
-    color: #ed92f0;
-    font-size: 0.9rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+
+}
+
+#devweb {
+  color:rgb(255, 199, 147);
+  font-size: 1.6rem;
+}
+
+/*_______________________*/
+/*    COMPET. INFORMATIQUE    */
+/*_______________________*/
+.compets {
+  color: white;
+  padding: 0.1rem;
+
+
+}
+
+.compets li {
+  list-style: inside;
+  color: #79ebff;
+  padding: 0.1rem;
+  font-size: 1.4rem;
+  margin-left: 2.5rem;
+
+
 }
 
 
-.compets  {
-    color: white;
-    padding: 0.1rem;
-    font-size: 0.8rem;
-    
-}
+/*_______________________*/
+/*    LOISIRS            */
+/*_______________________*/
 
-.compets li  {
-    color:#79ebff;
-    padding: 0.1rem;
-    font-size: 0.9rem;
-    
-}
- 
 .hobby li {
-    color:#79ebff;
-    padding: 0.1rem;
-    font-size: 0.9rem; 
-    
-} 
+  color: #79ebff;
+  padding: 0.1rem;
+  font-size: 1.4rem;
+  margin-left: 1.8rem;
+
+}
+
+/*_________________________*/
+/*  COMPET. PERSONNELLES  */
+/*_______________________*/
 
 
- 
+.compet {
+  grid-area: compet;
+  text-align: center;
+  font-size: 1rem;
 
+}
 
 #compet {
-    /*position:relative; 
-    position: relative;
-    width: 25%;
-    margin-top: -60%;
-    margin-left: -28%;*/
-    background: linear-gradient(70deg, #cf53c5, rgb(55, 125, 216));
-    border-bottom-right-radius: 1rem;
-    border-top-right-radius: 1rem;
-    position: fixed;
-    left: 0;
-    top: 15rem;
-    width: 10rem;
+
+/*
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: repeating-linear-gradient(to top,
+      rgba(255, 255, 255, 0.05) 0px 2px,
+      transparent 2px 4px), linear-gradient(to top, #3e0246 50%, #240327);  */
+
+
+  display: flex;
+  justify-content: center;
+  
+
 }
 
 #compet li {
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: bold;
-}
+  color:rgb(255, 199, 147);
+  padding: 0rem;
+  margin-top: 5rem;
 
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
  
+ 
+}
+ 
+ 
+
+/*_________________________*/
+/*        FOOTER         */
+/*_______________________*/
+
+
+
 
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(70deg, #bb46d8, rgb(55, 125, 216));
-    height: 1.2rem;
-
-    color: white;
-    font-weight: bold;
-
-}
-
-footer p {
-    margin-top: 0.4rem;
-    text-align: center;
-}
-
-
-/* ----------- MEDIA SCREEN ------------- */
-
-
-
-@media screen and (min-width: 1800px) {
-    .content {
-     background-color: rgba(70, 23, 131, 0.8);
-     border-radius: 1em;
-     box-shadow: 0 0 5.25em rgba(0, 0, 0, .25);
-     box-sizing: border-box;
-     /*left: 50%; ----/*
-     /*padding:5vmin;*/
-     position:fixed;
-     /*width: 40%; */
-     /* height: 78%; /* <--------------------------*/ 
-      /* text-align: center; */
-     /* top: 40%; ---- */
-     /*50%*/
-     transform: translate(100%, 2%);
-    
-     /* transform: translate(-50%, -50%); ----*/
- }
-}
-
-
-@media screen and (max-width: 1800px) {
-    .content {
-     background-color: rgba(70, 23, 131, 0.8);
-     border-radius: 1em;
-     box-shadow: 0 0 5.25em rgba(0, 0, 0, .25);
-     box-sizing: border-box;
-     /*left: 50%; ----/*
-     /*padding:5vmin;*/
-     position:fixed;
-     /*width: 40%; */
-     /* height: 78%; /* <--------------------------*/ 
-      /* text-align: center; */
-     /* top: 40%; ---- */
-     /*50%*/
-     transform: translate(80%, 2%);
-    
-     /* transform: translate(-50%, -50%); ----*/
- }
-}
-
-@media screen and (max-width: 1200px) {
-    .content {
-     background-color: rgba(70, 23, 131, 0.8);
-     border-radius: 1em;
-     box-shadow: 0 0 5.25em rgba(0, 0, 0, .25);
-     box-sizing: border-box;
-     /*left: 50%; ----/*
-     /*padding:5vmin;*/
-     position:fixed;
-     /*width: 40%; */
-     /* height: 78%; /* <--------------------------*/ 
-      /* text-align: center; */
-     /* top: 40%; ---- */
-     /*50%*/
-     transform: translate(20%, 2%);
-    
-     /* transform: translate(-50%, -50%); ----*/
- }
-}
-
- 
-
-@media screen and (max-width: 400px) {
-
-   
-    main {
-        margin-top: 6.5rem;
-        margin-left: 0.5rem;
-        margin-bottom:1rem;
-       
-    }
-
-   .content {
-    background-color: rgba(70, 23, 131, 0.8);
-    border-radius: 1em;
-    box-shadow: 0 0 5.25em rgba(0, 0, 0, .25);
-    box-sizing: border-box;
-    /*left: 50%; ----/*
-    /*padding:5vmin;*/
-    position:fixed;
-     
-    /* height: 78%; /* <--------------------------*/ 
-     /* text-align: center; */
-    /* top: 40%; ---- */
-    /*50%*/
-    transform: translate(0%, 0%);
-   
-    /* transform: translate(-50%, -50%); ----*/
-}
-
-
-header {
-    position: fixed;
-    top: 0.5rem;
-    width: 100%;
-    height: 4rem;
-    text-align: start;
-    color: white;
-    background: linear-gradient(70deg, #bb46d8, rgb(55, 125, 216));
-    margin-left: auto;
-    margin-right: auto;
-}
-
-header img {}
-
-/* photo CV avec effet */
-.photo {
-    float: left;
-    margin: 0.5rem;
-    width: 5rem;
-    height: 5rem;
-}
-
-.socialnetwork {
-    margin-right: 1%;
-    margin-top: -1.6rem;
-    position: relative;
-    left: 75%;
-}
-
-.social {
-    width: 7%;
-    margin: -8%;
-}
- 
-
-h1 span {
-    margin-left: 2rem;
-    font-size: 1rem;
-    text-shadow: none;
-    font-weight: bold;
-}
-
-
-
-
-
-#compet {
-    
-     display:none;
-      
-}
-
- 
-
-
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.0rem;
+  color: rgb(0, 204, 255);
+  margin-bottom: 2rem;
 }
