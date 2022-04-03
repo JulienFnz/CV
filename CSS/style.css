@@ -1,186 +1,9 @@
-
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import url("https://fonts.googleapis.com/css?family=PT+Mono");
 
-body {
-  /*background-color: rgb(61, 7, 66);*/
-
-  /*background: linear-gradient(0.25turn, #270031, #031322,#270031);*/
-  background: linear-gradient(-45deg, #290435, #350452, #30072b, #110844);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  font-size: 62.5%;
-  /* base de "10px" au lieu de "16px" */
-
-  font-family: Poppins; 
-  color: rgb(255, 255, 255);
-
-  /* a supprimer sur version mobile */
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 1%;
-  
-
-}
-
-/*ANIMATION FOND BODY - Dégradé animé*/
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
-/*Pour effet Bruit - div vide class bg*/
-
-.bg {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200vh;
-  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
-  background-repeat: repeat;
-  animation: bg-animation .2s infinite;
-  opacity: .9;
-  visibility: visible;
-}
-
-/*ANIMATION FOND Effet Bruit */
-@keyframes bg-animation {
-  0% {
-    transform: translate(0, 0)
-  }
-
-  10% {
-    transform: translate(-5%, -5%)
-  }
-
-  20% {
-    transform: translate(-10%, 5%)
-  }
-
-  30% {
-    transform: translate(5%, -10%)
-  }
-
-  40% {
-    transform: translate(-5%, 15%)
-  }
-
-  50% {
-    transform: translate(-10%, 5%)
-  }
-
-  60% {
-    transform: translate(15%, 0)
-  }
-
-  70% {
-    transform: translate(0, 10%)
-  }
-
-  80% {
-    transform: translate(-15%, 0)
-  }
-
-  90% {
-    transform: translate(10%, 5%)
-  }
-
-  100% {
-    transform: translate(5%, 0)
-  }
-}
-
-
-/*CONTAINER avec contour effet lumineux - contient la grid*/
-
-.container {
-  background: repeating-linear-gradient(to top,
-      rgba(255, 255, 255, 0.03) 0px 2px,
-      transparent 2px 4px),
-    linear-gradient(to bottom, #200933 50%, #4b0552);
-
-  display: grid;
-  grid-template-columns: 0.5fr 1.5fr;
-  grid-template-rows: 0.4fr 1.1fr;
-  grid-auto-columns: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "picture banner"
-    "compet info";
-
-  margin: auto;
-  padding: 0.5rem;
-  filter: drop-shadow(0 0 75px rgba(0, 247, 255, 0.25));
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border: 1px solid rgb(0, 153, 255);
-
-  /*--glow: drop-shadow(0 0 1px rgb(130, 238, 238));
-  filter: var(--glow) brightness(1.5) drop-shadow(0 0 10px rgb(130, 180, 238)); */
-
-  padding: 2rem;
-}
-
-
-/*
-.container::after {
-   
-  content:'';
-   height:90%;
-   width:100%;
-  display:flex;
-  background-image:linear-gradient(90deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px), linear-gradient(0deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px);
-  background-position:bottom;
-  background-repeat:repeat;
-  background-size:20px 20px;
-  left: -25px;
-  position:fixed;
-  bottom:0; 
-  transform: perspective(100px) rotateX(60deg);
-  z-index: 0;
-}
- */
-
-/*_______________________*/
-/*   PHOTO       */
-/*_______________________*/
 
 
 
-
-
-.picture {
-  display: grid;
-  align-self: center;
-  /* left and right */
-  justify-self: center;
-
-  grid-template-columns: 0.5fr 1fr 0.5fr;
-  grid-template-rows: 0.5fr 1fr 0.5fr;
-  gap: -10px -10px -10px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "e1 e2 youtube"
-    "e3 gridphoto linkedin"
-    "e4 twitter github";
-
-  grid-area: picture;
-
-}
 
 /*_______________________*/
 /*   logo social     */
@@ -188,45 +11,45 @@ body {
 
 .gridphoto {
   filter: drop-shadow(-1px -1px 25px rgba(0, 183, 255));
-  
+
 }
 
 .photo {
   clip-path: ellipse(50% 50%);
- 
 
-      
+
+
 }
 
 
 .twitter {
-   
-  align-self:center;
-  
+
+  align-self: center;
+
   z-index: 1;
 }
 
 .linkedin {
-  
-  justify-self:center;
-   
+
+  justify-self: center;
+
   z-index: 1;
 }
 
 
 .youtube {
-  align-self:end;
-  margin-left:-2.5rem;
-  margin-bottom:-2.5rem;
-   
+  align-self: end;
+  margin-left: -2.5rem;
+  margin-bottom: -2.5rem;
+
   z-index: 1;
 }
 
 .github {
-  margin-left:-2.5rem;
-  margin-top:-2.5rem;
-    
-   z-index: 1;
+  margin-left: -2.5rem;
+  margin-top: -2.5rem;
+
+  z-index: 1;
 }
 
 .twitter img {
@@ -234,14 +57,13 @@ body {
   transition: 0.2s;
   animation-duration: 3s;
   animation-name: slidein;
-  
+
 }
 
 .twitter img:hover {
   filter: drop-shadow(-1px -1px 25px rgb(0, 174, 255));
-  width: 5.5rem;
   transition: 0.2s;
- 
+
 }
 
 
@@ -253,7 +75,6 @@ body {
 
 .linkedin img:hover {
   filter: drop-shadow(-1px -1px 25px rgb(0, 238, 255));
-  width: 5.5rem;
 }
 
 .youtube img {
@@ -264,60 +85,57 @@ body {
 
 .youtube img:hover {
   filter: drop-shadow(-1px -1px 25px rgb(255, 0, 0));
-  width: 5.5rem;
+   
 }
 
 .github img {
   width: 6rem;
   animation-duration: 3s;
   animation-name: slidein;
-   
+
 }
 
 .github img:hover {
   filter: drop-shadow(-1px -1px 25px rgb(255, 115, 0));
-  width: 5.5rem;
+   
 }
 
 
 /*transform: rotate(10deg);*/
-  /*animation-duration: 5s;
+/*animation-duration: 5s;
   animation-name: slidein;*/
- 
 
-  @keyframes slidein {
-    from  {
-     
-     
-      transform: rotate(0deg);
-    }
-    
-    to {
-      transform: rotate(-360deg);
-     
-    }
+
+@keyframes slidein {
+  from {
+
+
+    transform: rotate(0deg);
   }
+
+  to {
+    transform: rotate(-360deg);
+
+  }
+}
 
 
 /*________________________________________________*/
-    /*               BANNIERE NOM + DEVWEB                 */
-       /*_______________________________________________________*/
+/*               BANNIERE NOM + DEVWEB                 */
+/*_______________________________________________________*/
 
 .banner {
   grid-area: banner;
-  
+
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
-
   /*justify-content: center;*/
 
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-
   /*background: repeating-linear-gradient(to top,
       rgba(255, 255, 255, 0.05) 0px 2px,
       transparent 2px 4px), linear-gradient(to left, #3e0246 50%, #240327); */
@@ -331,7 +149,7 @@ h1 {
   display: flex;
   flex-direction: column;
   margin-left: 6rem;
-   
+
 }
 
 h1 span {
@@ -339,21 +157,21 @@ h1 span {
   font-size: 3.5rem;
   text-shadow: none;
   font-weight: bold;
-  
+
 }
 
 .terminal {
-  margin-top:2rem;
+  margin-top: 2rem;
   margin-left: 6rem;
-  font-size:1.2rem;
-  font-family:"PT Mono";
-  color:rgb(255, 199, 147);
- 
-  width:50%;
+  font-size: 1.2rem;
+  font-family: "PT Mono";
+  color: rgb(255, 199, 147);
+
+  width: 50%;
 
 }
- 
- 
+
+
 
 
 /*_______________________*/
@@ -369,39 +187,43 @@ h1 span {
   margin-left: 5rem;
 }
 
- 
+
 
 .xp {
 
   padding: 0.7rem;
-  
- /* box-shadow:
+
+  /* box-shadow:
   0 0 0.5rem rgb(0, 204, 255),
   inset 0 0 .5rem rgb(106, 250, 255),        
   outset 0 0 .5rem rgb(106, 250, 255); */
- 
--webkit-box-shadow: 0px 0px 0px 2px rgb(74, 189, 255); 
-box-shadow: 0px 0px 0px 2px rgb(149, 216, 255),
-0px 0px 10px 10px rgba(15, 167, 255, 0.5),
-inset 0px 0px 10px 10px rgba(15, 167, 255, 0.5);
- 
-  border-radius: 10rem;
+
+  -webkit-box-shadow: 0px 0px 0px 2px rgb(74, 189, 255);
+  box-shadow: 0px 0px 0px 2px rgb(149, 216, 255),
+    0px 0px 10px 10px rgba(15, 167, 255, 0.5),
+    inset 0px 0px 10px 10px rgba(15, 167, 255, 0.5);
+
+  border-radius: 5rem;
   width: 15rem;
-  margin-top: 1.5rem;
+  margin-top: 1.8rem;
   margin-bottom: 1.2rem;
   font-weight: bold;
   text-align: center;
   color: white;
   font-size: 1.8rem;
-  
+ 
 }
+ 
+  
+ 
+
 
 
 h3 {
   display: flex;
   margin-top: 1.5rem;
   margin-left: 1.8rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: rgb(255, 255, 255);
 }
@@ -411,17 +233,18 @@ h3 {
 /*_______________________*/
 .exp {
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   margin-left: 1.8rem;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   color: rgb(214, 214, 214);
-  
+
+
 
 }
 
 time {
 
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   color: #79ebff;
   margin-right: 2rem;
 
@@ -439,6 +262,7 @@ h4 {
 
 .firstexp {
   margin-left: 1.8rem;
+  margin-bottom: 4rem;
 }
 
 .firstexp li {
@@ -458,16 +282,18 @@ h4 {
   font-size: 1rem;
   color: #b8b8b8;
 
+
 }
 
 .formations li span {
   color: #ffffff;
   font-size: 1.2rem;
 
+
 }
 
 #devweb {
-  color:rgb(255, 199, 147);
+  color: rgb(255, 199, 147);
   font-size: 1.6rem;
 }
 
@@ -477,7 +303,7 @@ h4 {
 .compets {
   color: white;
   padding: 0.1rem;
-
+  margin-bottom: 4rem;
 
 }
 
@@ -495,6 +321,10 @@ h4 {
 /*_______________________*/
 /*    LOISIRS            */
 /*_______________________*/
+
+.hobby {
+  margin-bottom: 2rem;
+}
 
 .hobby li {
   color: #79ebff;
@@ -518,7 +348,7 @@ h4 {
 
 #compet {
 
-/*
+  /*
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
@@ -529,23 +359,23 @@ h4 {
 
   display: flex;
   justify-content: center;
-  
+
 
 }
 
 #compet li {
-  color:rgb(255, 199, 147);
+  color: rgb(255, 199, 147);
   padding: 0rem;
   margin-top: 5rem;
 
   text-align: center;
   font-size: 1.6rem;
   font-weight: bold;
- 
- 
+
+
 }
- 
- 
+
+
 
 /*_________________________*/
 /*        FOOTER         */
@@ -560,4 +390,348 @@ footer {
   font-size: 1.0rem;
   color: rgb(0, 204, 255);
   margin-bottom: 2rem;
+}
+
+
+
+/* ----------- |||||||||||| ------------- */
+/* ----------- _____________ ------------- */
+/* ----------- MEDIA SCREEN ------------- */
+/* ----------- _____________------------- */
+/* ----------- |||||||||||| ------------- */
+
+
+@media screen and (min-width: 1279px) {
+
+  body {
+    /*background-color: rgb(61, 7, 66);*/
+  
+    /*background: linear-gradient(0.25turn, #270031, #031322,#270031);*/
+    background: linear-gradient(-45deg, #290435, #350452, #30072b, #110844);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-size: 62.5%;
+    /* base de "10px" au lieu de "16px" */
+   
+    font-family: Poppins;
+    color: rgb(255, 255, 255);
+  
+    /* a supprimer sur version mobile */
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+  
+  
+  }
+
+
+  .container {
+    background: repeating-linear-gradient(to top,
+        rgba(255, 255, 255, 0.03) 0px 2px,
+        transparent 2px 4px),
+      linear-gradient(to bottom, #200933 50%, #4b0552);
+  
+      display: grid;
+      grid-template-columns: 0.5fr 1.5fr;
+      grid-template-rows: 0.4fr 1.1fr;
+      grid-auto-columns: 1fr;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "picture banner"
+        "compet info";
+    
+      margin: auto;
+      padding: 0.5rem;
+      
+  
+    filter: drop-shadow(0 0 75px rgba(0, 247, 255, 0.25));
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 1px solid rgb(0, 153, 255);
+  
+    /*--glow: drop-shadow(0 0 1px rgb(130, 238, 238));
+    filter: var(--glow) brightness(1.5) drop-shadow(0 0 10px rgb(130, 180, 238)); */
+    padding: 2rem;
+  
+    /* -webkit-box-shadow: 0px 0px 0px 2px rgb(74, 189, 255); */
+    box-shadow: 0px 0px 0px 2px rgb(149, 216, 255),
+      0px 0px 10px 10px rgba(15, 167, 255, 0.5),
+      inset 0px 0px 10px 10px rgba(15, 167, 255, 0.5);
+  
+  }
+
+  
+
+
+.picture {
+   
+  display: grid;
+  align-self: center;
+  /* left and right */
+  justify-self: center;
+margin-left:2rem;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  gap: -10px -10px -10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "e1 e2 youtube"
+    "e3 gridphoto linkedin"
+    "e4 twitter github";
+
+  grid-area: picture;
+
+}
+  }
+
+
+/*_______________________*/
+/*   MEDIA SCREEN+++++400     */
+/*_______________________*/
+
+  @media screen and (min-width: 915px) {
+
+    body {
+      /*background-color: rgb(61, 7, 66);*/
+    
+      /*background: linear-gradient(0.25turn, #270031, #031322,#270031);*/
+      background: linear-gradient(-45deg, #290435, #350452, #30072b, #110844);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      font-size: 62.5%;
+      /* base de "10px" au lieu de "16px" */
+     
+      font-family: Poppins;
+      color: rgb(255, 255, 255);
+    
+      /* a supprimer sur version mobile */
+      
+      margin-top: 1%;
+      margin-left: 5%;
+      margin-right: 5%;
+       
+    }
+  
+  
+    .container {
+      background: repeating-linear-gradient(to top,
+          rgba(255, 255, 255, 0.03) 0px 2px,
+          transparent 2px 4px),
+        linear-gradient(to bottom, #200933 50%, #4b0552);
+    
+        display: grid;
+        grid-template-columns: 0.5fr 1.5fr;
+        grid-template-rows: 0.4fr 1.1fr;
+        grid-auto-columns: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "picture banner"
+          "compet info";
+       
+         
+    }
+
+
+
+
+
+.picture {
+   
+  display: grid;
+  align-self: center;
+  /* left and right */
+  justify-self: center;
+margin-left:2rem;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  gap: -10px -10px -10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "e1 e2 youtube"
+    "e3 gridphoto linkedin"
+    "e4 twitter github";
+
+  grid-area: picture;
+
+}
+    }
+
+
+
+
+
+    @media screen and (min-width: 400px) {
+
+      body {
+        /*background-color: rgb(61, 7, 66);*/
+      
+        /*background: linear-gradient(0.25turn, #270031, #031322,#270031);*/
+        background: linear-gradient(-45deg, #290435, #350452, #30072b, #110844);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        font-size: 62.5%;
+        /* base de "10px" au lieu de "16px" */
+       
+        font-family: Poppins;
+        color: rgb(255, 255, 255);
+      
+        /* a supprimer sur version mobile */
+        
+        margin-top: 1%;
+        margin-left: 5%;
+        margin-right: 5%;
+         
+      }
+    
+    
+      .container {
+        
+      
+          display: grid;
+          grid-template-columns: 0.5fr 1.5fr;
+          grid-template-rows: 0.4fr 1.1fr;
+          grid-auto-columns: 1fr;
+          gap: 0px 0px;
+          grid-auto-flow: row;
+          grid-template-areas:
+            "picture banner"
+            "compet info";
+         
+           
+      }
+  
+  
+  
+  
+  
+  .picture {
+     
+    display: grid;
+    align-self: center;
+    /* left and right */
+    justify-self: center;
+  margin-left:2rem;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    gap: -10px -10px -10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "e1 e2 youtube"
+      "e3 gridphoto linkedin"
+      "e4 twitter github";
+  
+    grid-area: picture;
+  
+  }
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+  /*___________MOBILe____________*/
+  /*___________MOBILe____________*/
+  /*___________MOBILe____________*/
+
+/*_______________________*/
+/*   MEDIA SCREEN MOBILe -400     */
+/*_______________________*/
+
+@media screen and (max-width: 400px) {
+
+  body {
+    /*background-color: rgb(61, 7, 66);*/
+  
+    /*background: linear-gradient(0.25turn, #270031, #031322,#270031);*/
+    background: linear-gradient(-45deg, #290435, #350452, #30072b, #110844);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-size: 62.5%;
+    /* base de "10px" au lieu de "16px" */
+    padding:0.5rem;
+    margin: 1rem; 
+    font-family: Poppins;
+    color: rgb(255, 255, 255);
+  
+    /* a supprimer sur version mobile */
+    
+  
+  
+  }
+
+
+
+
+.container {
+   
+
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 0.4fr 1.1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "picture banner"
+      "compet info";
+  
+    /*margin: auto;*/
+   
+    
+ /* 
+  filter: drop-shadow(0 0 75px rgba(0, 247, 255, 0.25));
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: 1px solid rgb(0, 153, 255);  */
+
+  /*--glow: drop-shadow(0 0 1px rgb(130, 238, 238));
+  filter: var(--glow) brightness(1.5) drop-shadow(0 0 10px rgb(130, 180, 238)); */
+ 
+ 
+
+}
+
+
+
+
+/*_______________________*/
+/*   PHOTO  -400     */
+/*_______________________*/
+
+
+
+
+
+.picture {
+   
+  display: grid;
+  align-self: center;
+  /* left and right */
+  justify-self: center;
+margin-left:2rem;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  gap: -10px -10px -10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "e1 e2 youtube"
+    "e3 gridphoto linkedin"
+    "e4 twitter github";
+
+  grid-area: picture;
+
+}
+
+
 }
